@@ -1,0 +1,186 @@
+/* Vehicle Selector Styles */
+
+.vehicle-selector {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    padding: 32px;
+    border-radius: 16px;
+    margin-bottom: 32px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.selector-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 8px 0;
+    text-align: center;
+}
+
+.selector-subtitle {
+    font-size: 16px;
+    color: #a8d0ff;
+    margin: 0 0 24px 0;
+    text-align: center;
+}
+
+.selector-controls {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) auto;
+    gap: 16px;
+    align-items: end;
+}
+
+.selector-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.selector-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.selector-dropdown {
+    padding: 12px 16px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.selector-dropdown:hover:not(:disabled) {
+    border-color: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.selector-dropdown:focus {
+    outline: none;
+    border-color: #ff6b9d;
+    box-shadow: 0 0 0 3px rgba(255, 107, 157, 0.2);
+}
+
+.selector-dropdown:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.selector-dropdown option {
+    background: #1e3c72;
+    color: #ffffff;
+    padding: 8px;
+}
+
+.selector-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-find-parts,
+.btn-clear {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.btn-find-parts {
+    background: linear-gradient(135deg, #ff6b9d 0%, #c471ed 100%);
+    color: white;
+    box-shadow: 0 4px 12px rgba(255, 107, 157, 0.3);
+}
+
+.btn-find-parts:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(255, 107, 157, 0.4);
+}
+
+.btn-find-parts:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-clear {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-clear:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-clear:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.selected-vehicle {
+    margin-top: 24px;
+    padding: 16px 24px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 2px solid rgba(255, 107, 157, 0.3);
+}
+
+.vehicle-icon {
+    font-size: 24px;
+}
+
+.vehicle-text {
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .selector-controls {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .selector-actions {
+        grid-column: 1 / -1;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .vehicle-selector {
+        padding: 24px 16px;
+    }
+
+    .selector-title {
+        font-size: 24px;
+    }
+
+    .selector-controls {
+        grid-template-columns: 1fr;
+    }
+
+    .selector-actions {
+        flex-direction: column;
+    }
+
+    .btn-find-parts,
+    .btn-clear {
+        width: 100%;
+    }
+}
