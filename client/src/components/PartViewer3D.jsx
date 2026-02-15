@@ -1,5 +1,6 @@
 import React from 'react';
 import Scene from './Scene';
+import EmptyPlaceholder from './EmptyPlaceholder';
 
 /**
  * PartViewer3D Component - Dashboard Edition
@@ -12,17 +13,17 @@ import Scene from './Scene';
 const PartViewer3D = ({ part, onClose }) => {
     return (
         <div
-            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            className="fixed inset-0 bg-black/90 backdrop-blur-md z-50 flex items-center justify-center p-4"
             onClick={onClose}
         >
             <div
-                className="bg-[#0D0D0D] border border-white/20 rounded-lg max-w-6xl w-full max-h-[90vh] overflow-hidden shadow-2xl"
+                className="bg-[#1F1F1F]/95 backdrop-blur-lg border border-white/20 rounded-lg max-w-6xl w-full max-h-[90vh] overflow-hidden shadow-2xl"
                 onClick={(e) => e.stopPropagation()}
             >
                 {/* Header */}
-                <div className="bg-[#1F1F1F] border-b border-white/10 p-6 flex items-center justify-between">
+                <div className="bg-[#0D0D0D] border-b border-white/10 p-6 flex items-center justify-between">
                     <div>
-                        <h2 className="text-3xl font-bold text-white uppercase tracking-widest mb-2">
+                        <h2 className="text-3xl font-bold text-[#FF6B00] uppercase tracking-widest mb-2">
                             {part.name}
                         </h2>
                         <p className="text-[#FF6B00] text-lg font-semibold uppercase tracking-wide">

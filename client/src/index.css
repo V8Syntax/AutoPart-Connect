@@ -2,19 +2,30 @@
 
 @layer base {
   :root {
-    /* Custom Color Palette */
+    /* Professional Dark Theme */
     --background: #0D0D0D;
+    /* Pure black background */
     --primary-orange: #FF6B00;
+    /* Vibrant orange */
     --orange-hover: #FF8533;
+    /* Lighter orange */
     --card-bg: #1F1F1F;
+    /* Dark gray cards */
     --card-hover: #262626;
+    /* Slightly lighter on hover */
     --text-primary: #FFFFFF;
+    /* White text */
     --text-secondary: #A0A0A0;
-    --border-dark: #1F1F1F;
+    /* Gray secondary text */
+    --border-dark: #2A2A2A;
+    /* Subtle dark borders */
 
-    /* Effects */
-    --orange-glow: 0 0 25px rgba(255, 107, 0, 0.3);
-    --card-shadow: 0 8px 24px rgba(255, 107, 0, 0.15);
+    /* Enhanced Effects */
+    --orange-glow: 0 0 20px rgba(255, 107, 0, 0.5);
+    --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
 
     /* Typography */
     font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -37,7 +48,7 @@
     color: var(--text-primary);
   }
 
-  /* Dashboard Typography - Industrial Feel */
+  /* Dashboard Typography - Orange Headings */
   h1,
   h2,
   h3,
@@ -56,12 +67,13 @@
   /* Premium Button with Glow */
   .btn-primary {
     background-color: var(--primary-orange);
-    color: var(--text-primary);
+    color: #FFFFFF;
+    /* White text on orange button */
     font-weight: 600;
     padding: 0.75rem 1.5rem;
     border-radius: 0.375rem;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-md);
     text-transform: uppercase;
     letter-spacing: 0.05em;
   }
@@ -87,6 +99,7 @@
   .btn-secondary:hover {
     background-color: var(--card-hover);
     border-color: var(--primary-orange);
+    box-shadow: var(--shadow-sm);
   }
 
   /* Premium Card with Depth */
@@ -96,12 +109,13 @@
     border-radius: 0.5rem;
     padding: 1.5rem;
     transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
   }
 
   .card-premium:hover {
     background-color: var(--card-hover);
     border-color: var(--primary-orange);
-    box-shadow: var(--card-shadow);
+    box-shadow: var(--orange-glow);
     transform: translateY(-2px);
   }
 
@@ -121,11 +135,11 @@
     box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.1);
   }
 
-  /* Glassmorphism Effect */
+  /* Glassmorphism Effect - Dark Version */
   .glass-effect {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
   }
 

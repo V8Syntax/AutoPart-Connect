@@ -71,32 +71,31 @@ const PartList = () => {
     };
 
     return (
-        <div className="min-h-screen bg-background">
+        <div className="min-h-screen bg-white">
             {/* Hero Section with Integrated Vehicle Selector */}
             <Hero onSearch={handleVehicleSearch} />
 
             {/* Parts Grid Section */}
-            <section className="max-w-7xl mx-auto px-4 py-16">
+            <section className="max-w-7xl mx-auto px-6 py-16">
                 {/* Section Header */}
                 <div className="mb-12">
                     <div className="flex items-center justify-between mb-6">
                         <div>
-                            <h2 className="text-4xl font-bold text-white mb-2">
+                            <h2 className="text-3xl font-bold text-gray-900 mb-2">
                                 {selectedVehicle ? 'Compatible Parts' : 'All Parts'}
                             </h2>
-                            <p className="text-text-secondary">
+                            <p className="text-gray-600 text-sm">
                                 {selectedVehicle
                                     ? `Showing parts for ${selectedVehicle.year} ${selectedVehicle.make} ${selectedVehicle.model}`
-                                    : 'Browse our complete catalog of premium automotive parts'
-                                }
+                                    : 'Browse our complete catalog of premium automotive parts'}
                             </p>
                         </div>
                         <div className="text-right">
-                            <p className="text-3xl font-bold text-primary-orange">
+                            <p className="text-3xl font-bold text-gray-900">
                                 {parts.length}
                             </p>
-                            <p className="text-text-secondary text-sm">
-                                {parts.length === 1 ? 'Part' : 'Parts'} Found
+                            <p className="text-gray-500 text-sm">
+                                {parts.length === 1 ? 'Part' : 'Parts'}
                             </p>
                         </div>
                     </div>
@@ -104,12 +103,12 @@ const PartList = () => {
                     {/* Filter indicator */}
                     {selectedVehicle && (
                         <div className="flex items-center gap-3">
-                            <span className="px-4 py-2 bg-primary-orange/20 border border-primary-orange rounded text-primary-orange text-sm font-semibold">
+                            <span className="px-4 py-2 bg-orange-100 border border-[#FF6B00] rounded text-[#FF6B00] text-sm font-semibold">
                                 ✓ Filtered by Vehicle
                             </span>
                             <button
                                 onClick={() => handleVehicleSearch(null, null)}
-                                className="text-text-secondary hover:text-primary-orange transition-colors text-sm underline"
+                                className="text-gray-600 hover:text-[#FF6B00] transition-colors text-sm underline"
                             >
                                 Clear Filter
                             </button>
@@ -120,18 +119,18 @@ const PartList = () => {
                 {/* Loading State */}
                 {loading && (
                     <div className="flex flex-col items-center justify-center py-20">
-                        <div className="w-16 h-16 border-4 border-card-bg border-t-primary-orange rounded-full animate-spin mb-4"></div>
-                        <p className="text-text-secondary">Loading premium parts...</p>
+                        <div className="w-16 h-16 border-4 border-gray-200 border-t-[#FF6B00] rounded-full animate-spin mb-4"></div>
+                        <p className="text-gray-600">Loading parts...</p>
                     </div>
                 )}
 
                 {/* Error State */}
                 {error && (
-                    <div className="bg-red-900/20 border border-red-500 rounded-lg p-6 text-center">
-                        <p className="text-red-400 text-lg mb-4">⚠️ {error}</p>
+                    <div className="bg-red-50 border border-red-200 rounded-lg p-6 text-center">
+                        <p className="text-red-600 text-lg mb-4">⚠️ {error}</p>
                         <button
                             onClick={fetchAllParts}
-                            className="bg-primary-orange hover:bg-orange-hover text-white font-semibold px-6 py-2 rounded transition-colors"
+                            className="bg-[#FF6B00] hover:bg-orange-600 text-white font-semibold px-6 py-2 rounded transition-colors"
                         >
                             Try Again
                         </button>
@@ -142,22 +141,22 @@ const PartList = () => {
                 {!loading && !error && (
                     <>
                         {parts.length === 0 ? (
-                            <div className="bg-card-bg border border-border-dark rounded-lg p-12 text-center">
-                                <p className="text-2xl text-text-secondary mb-2">No parts found</p>
-                                <p className="text-text-secondary mb-6">
+                            <div className="bg-gray-50 border border-gray-200 rounded-lg p-12 text-center">
+                                <p className="text-2xl text-gray-600 mb-2">No parts found</p>
+                                <p className="text-gray-500 mb-6">
                                     Try adjusting your vehicle selection or browse all parts
                                 </p>
                                 {selectedVehicle && (
                                     <button
                                         onClick={() => handleVehicleSearch(null, null)}
-                                        className="bg-primary-orange hover:bg-orange-hover text-white font-semibold px-6 py-3 rounded transition-colors"
+                                        className="bg-[#FF6B00] hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded transition-colors"
                                     >
                                         View All Parts
                                     </button>
                                 )}
                             </div>
                         ) : (
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
                                 {parts.map((part) => (
                                     <PartCard
                                         key={part.id}

@@ -6,65 +6,37 @@ function App() {
   return (
     <Router>
       <div className="min-h-screen bg-background text-white">
-        {/* Navigation Header */}
-        <nav className="bg-card-bg border-b border-border-dark sticky top-0 z-50 backdrop-blur-lg bg-opacity-95">
-          <div className="max-w-7xl mx-auto px-4">
+        {/* Navigation Header - Clean White Design */}
+        <nav className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+          <div className="max-w-7xl mx-auto px-6">
             <div className="flex items-center justify-between h-16">
               {/* Logo */}
               <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-                <span className="text-3xl">🚗</span>
-                <span className="text-xl font-bold">
-                  <span className="text-white">AUTO</span>
-                  <span className="text-primary-orange">PART</span>
-                  <span className="text-white"> CONNECT</span>
+                <div className="w-10 h-10 bg-[#FF6B00] rounded flex items-center justify-center">
+                  <span className="text-white text-xl font-bold">A</span>
+                </div>
+                <span className="text-xl font-bold tracking-tight text-gray-900">
+                  AutoPart Connect
                 </span>
               </Link>
 
-              {/* Navigation Links */}
-              <div className="hidden md:flex items-center gap-8">
-                <Link
-                  to="/"
-                  className="text-text-secondary hover:text-primary-orange transition-colors font-medium"
-                >
-                  Home
-                </Link>
-                <Link
-                  to="/catalog"
-                  className="text-text-secondary hover:text-primary-orange transition-colors font-medium"
-                >
-                  Catalog
-                </Link>
-                <Link
-                  to="/catalog"
-                  className="text-text-secondary hover:text-primary-orange transition-colors font-medium"
-                >
-                  Categories
-                </Link>
-                <Link
-                  to="/catalog"
-                  className="text-text-secondary hover:text-primary-orange transition-colors font-medium"
-                >
-                  Brands
-                </Link>
+              {/* Search Bar */}
+              <div className="flex-1 max-w-2xl mx-8">
+                <input
+                  type="text"
+                  placeholder="Search by part name, SKU, or vehicle..."
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FF6B00] focus:border-transparent"
+                />
               </div>
 
-              {/* Action Icons */}
-              <div className="flex items-center gap-4">
-                <button className="text-text-secondary hover:text-primary-orange transition-colors text-xl">
-                  🔍
-                </button>
-                <button className="text-text-secondary hover:text-primary-orange transition-colors text-xl">
-                  👤
-                </button>
-                <button className="text-text-secondary hover:text-primary-orange transition-colors text-xl">
-                  ❤️
-                </button>
-                <button className="relative text-text-secondary hover:text-primary-orange transition-colors text-xl">
-                  🛒
-                  <span className="absolute -top-1 -right-1 bg-primary-orange text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
-                    0
-                  </span>
-                </button>
+              {/* Action Buttons */}
+              <div className="flex items-center gap-6">
+                <Link to="/" className="text-gray-700 hover:text-[#FF6B00] transition-colors text-sm font-medium">
+                  Account
+                </Link>
+                <Link to="/catalog" className="flex items-center gap-2 text-gray-700 hover:text-[#FF6B00] transition-colors text-sm font-medium">
+                  <span>Cart (2)</span>
+                </Link>
               </div>
             </div>
           </div>
@@ -77,7 +49,7 @@ function App() {
         </Routes>
 
         {/* Footer */}
-        <footer className="bg-card-bg border-t border-border-dark mt-20">
+        <footer className="bg-[#1F1F1F] border-t border-[#2A2A2A] mt-20">
           <div className="max-w-7xl mx-auto px-4 py-12">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
               {/* About Section */}
@@ -126,7 +98,7 @@ function App() {
             </div>
 
             {/* Bottom Bar */}
-            <div className="border-t border-border-dark mt-8 pt-8 text-center text-text-secondary">
+            <div className="border-t border-[#2A2A2A] mt-8 pt-8 text-center text-text-secondary">
               <p>&copy; 2026 AutoPart Connect. All rights reserved.</p>
             </div>
           </div>
