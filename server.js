@@ -82,6 +82,7 @@ app.get('/api/parts', async (req, res) => {
           p.stock_quantity,
           p.category,
           p.model_url,
+          p.image_url,
           v.year,
           v.make,
           v.model,
@@ -133,7 +134,8 @@ app.get('/api/parts', async (req, res) => {
           part_number,
           stock_quantity,
           category,
-          model_url
+          model_url,
+          image_url
         FROM parts
       `;
 

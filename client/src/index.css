@@ -2,30 +2,37 @@
 
 @layer base {
   :root {
-    /* Professional Dark Theme */
-    --background: #0D0D0D;
-    /* Pure black background */
-    --primary-orange: #FF6B00;
-    /* Vibrant orange */
-    --orange-hover: #FF8533;
-    /* Lighter orange */
-    --card-bg: #1F1F1F;
-    /* Dark gray cards */
-    --card-hover: #262626;
-    /* Slightly lighter on hover */
+    /* Soft Pistachio Theme */
+    --soft-pistachio: #DEF4C6;
+    --mint-bloom: #73E2A7;
+    --forest-jade: #1C7C54;
+    --deep-evergreen: #1B512D;
+
+    --background: var(--deep-evergreen);
+    /* Deep Evergreen background */
+    --primary-orange: var(--mint-bloom);
+    /* Maps to Mint Bloom (Legacy name: primary-orange) */
+    --orange-hover: var(--soft-pistachio);
+    /* Maps to Soft Pistachio (Legacy name: orange-hover) */
+    --card-bg: var(--forest-jade);
+    /* Forest Jade cards */
+    --card-hover: #238b5e;
+    /* Slightly lighter Forest Jade */
+
     --text-primary: #FFFFFF;
     /* White text */
-    --text-secondary: #A0A0A0;
-    /* Gray secondary text */
-    --border-dark: #2A2A2A;
-    /* Subtle dark borders */
+    --text-secondary: var(--soft-pistachio);
+    /* Soft Pistachio for secondary text */
+    --border-dark: #2A4A3A;
+    /* Dark green borders */
 
     /* Enhanced Effects */
-    --orange-glow: 0 0 20px rgba(255, 107, 0, 0.5);
-    --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
-    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
-    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+    --orange-glow: 0 0 20px rgba(115, 226, 167, 0.5);
+    /* Mint Bloom Glow */
+    --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.4);
 
     /* Typography */
     font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -132,7 +139,7 @@
   .input-premium:focus {
     outline: none;
     border-color: var(--primary-orange);
-    box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.1);
+    box-shadow: 0 0 0 3px rgba(115, 226, 167, 0.1);
   }
 
   /* Glassmorphism Effect - Dark Version */
